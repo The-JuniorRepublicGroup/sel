@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+
+<suite name="TestngSuite">
+    <test name="TestngTest">
+        <groups>
+            <run>
+                <include name="demo" />
+            </run>
+        </groups>
+        <packages>
+            <package name="com.raphael.framework" />
+            <package name="com.raphael.test" />
+        </packages>
+    </test>
+</suite>
