@@ -1,3 +1,4 @@
+import common.BrowserFactory;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import java.util.concurrent.TimeUnit;
@@ -30,11 +31,9 @@ public class LoginTest {
     @BeforeTest
     public void setUp() {
 
-        driver = new ChromeDriver();
+        // This will launch browser and specified URL
+        driver = BrowserFactory.startBrowser("chrome",baseURL);
 
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        driver.manage().window().maximize();
-        driver.get(baseURL);
     }
 
     /**
@@ -86,8 +85,9 @@ public class LoginTest {
 
         objHomePage.logoutOf();
         Assert.assertTrue(loginPageTitle.contains("Sign In To Your Account"));
-        System.out.println("Sign In To Your Account Message Exists Home Page Test passed.");
         System.out.println("Successfully logged out");
+
+
 
 
 
